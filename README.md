@@ -1,9 +1,7 @@
 # Online_Admission_AND_ENTRY_TEST_SYSTEM_DBS_PROJECT
 A Admission and Entry Test System in java using SQL DataBase
 
-# Fuctionalities
-  *Student Register his/her self for Admission
-  *After Registration System will Provide a Default Password
+# Fuctionalities*Student Register his/her self for Admission
   
 # Languages and Tools 
   Programming Languagae: Java
