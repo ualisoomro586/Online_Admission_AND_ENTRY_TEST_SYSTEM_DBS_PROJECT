@@ -3,7 +3,7 @@ A Admission and Entry Test System in java using SQL DataBase
 
 # Fuctionalities
 Student Register his/her self for Admission
-*<br />Student Can Login After Registration.
+<br />Student Can Login After Registration.
 <br />Student Can Give Online Entry Test.
 <br />Admin have its Personal id.
 <br />Admin Can access Records of All Student Through System.
