@@ -2,7 +2,7 @@
 A Admission and Entry Test System in java using SQL DataBase
 
 # Fuctionalities
-*Student Register his/her self for Admission__Student Can Login After Registration.
+*Student Register his/her self for Admission <br />Student Can Login After Registration.
   
 # Languages and Tools 
   Programming Languagae: Java
