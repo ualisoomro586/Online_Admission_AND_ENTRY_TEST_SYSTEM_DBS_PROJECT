@@ -2,8 +2,8 @@
 A Admission and Entry Test System in java using SQL DataBase
 
 # Fuctionalities
-  Student Register his/her self for Admission
-  After Registration System will Provide a Default Password to Students
+*Student Register his/her self for Admission
+*After Registration System will Provide a Default Password to Students
   Student Can Login After Registration.
   Student Can Give Online Entry Test.
   Admin have its Personal id.
