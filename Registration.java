@@ -16,8 +16,8 @@ import java.util.Locale;
 import java.util.Stack;
 
 public class Registration extends JPanel implements FocusListener, ActionListener {
-    String name, fatherName, Cnic, surname, District, phone;
-    JTextField username, fathername, cnic, castt, districtt, contactNo;
+    String name, fatherName, Cnic, surname, District, phone, eMail;
+    JTextField username, fathername, cnic, castt, districtt, contactNo,emaill;
     JPasswordField password;
     JButton submitButton, addButton, clearButton;
     Border line;
@@ -40,7 +40,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
 
         JLabel heading = new JLabel("Registration Form");
         heading.setForeground(new Color(220, 220, 220));
-        heading.setBounds(85, 10, 300, 50);
+        heading.setBounds(120, 5, 300, 50);
         heading.setFocusable(true);
         heading.setFont(new Font("Arial", Font.ITALIC | Font.BOLD, 25));
         add(heading);
@@ -62,7 +62,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
         add(addButton);
 
         JLabel userName = new JLabel("Name");
-        userName.setBounds(30, 40, 300, 50);
+        userName.setBounds(30, 40, 300, 20);
         userName.setForeground(new Color(220, 220, 220));
         userName.setFont(new Font("Arial", Font.BOLD, 16));
         add(userName);
@@ -72,7 +72,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
         border = new CompoundBorder(line, empty);
 
         username = new JTextField();
-        username.setBounds(30, 80, 300, 30);
+        username.setBounds(30, 70, 300, 25);
         username.setFont(new Font("Arial", Font.PLAIN, 16));
         username.setText("Enter Name");
         username.setForeground(new Color(150, 150, 150));
@@ -82,13 +82,13 @@ public class Registration extends JPanel implements FocusListener, ActionListene
         add(username);
 
         JLabel fatherName = new JLabel("Father's Name");
-        fatherName.setBounds(30, 100, 300, 50);
+        fatherName.setBounds(30, 100, 300, 20);
         fatherName.setForeground(new Color(220, 220, 220));
         fatherName.setFont(new Font("Arial", Font.BOLD, 16));
         add(fatherName);
 
         fathername = new JTextField();
-        fathername.setBounds(30, 140, 300, 30);
+        fathername.setBounds(30, 130, 300, 25);
         fathername.setFont(new Font("Arial", Font.PLAIN, 16));
         fathername.setText("Enter Your Father's Name");
         fathername.setForeground(new Color(150, 150, 150));
@@ -98,13 +98,13 @@ public class Registration extends JPanel implements FocusListener, ActionListene
         add(fathername);
 
         JLabel cNIc = new JLabel("CNIC");
-        cNIc.setBounds(30, 160, 300, 50);
+        cNIc.setBounds(30, 160, 300, 20);
         cNIc.setForeground(new Color(220, 220, 220));
         cNIc.setFont(new Font("Arial", Font.BOLD, 16));
         add(cNIc);
 
         cnic = new JTextField();
-        cnic.setBounds(30, 200, 300, 30);
+        cnic.setBounds(30, 190, 300, 25);
         cnic.setFont(new Font("Arial", Font.PLAIN, 16));
         cnic.setText("Format: xxxxx-xxxxxxxx-x");
         cnic.setForeground(new Color(150, 150, 150));
@@ -114,7 +114,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
         add(cnic);
 
         JLabel DOB = new JLabel("D.O.B");
-        DOB.setBounds(30, 230, 300, 50);
+        DOB.setBounds(30, 230, 300, 20);
         DOB.setForeground(new Color(220, 220, 220));
         DOB.setFont(new Font("Arial", Font.BOLD, 16));
         add(DOB);
@@ -123,7 +123,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
         for(int i=1; i<32; i++)
             days[i-1] = ""+i;
         day = new JComboBox<>(days);
-        day.setBounds(100,240,50,30);
+        day.setBounds(100,230,50,20);
         day.setSelectedItem("1");
         day.addActionListener(this);
         add(day);
@@ -133,7 +133,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
             months[i-1] = ""+i;
         month = new JComboBox<>(months);
         month.setSelectedItem("1");
-        month.setBounds(160,240,70,30);
+        month.setBounds(160,230,70,20);
         month.addActionListener(this);
         add(month);
 
@@ -142,19 +142,36 @@ public class Registration extends JPanel implements FocusListener, ActionListene
             years[i] = ""+j;
         year = new JComboBox<>(years);
         year.setSelectedItem("1990");
-        year.setBounds(240,240,90,30);
+        year.setBounds(240,230,90,20);
         year.addActionListener(this);
         add(year);
 
 
+        JLabel email = new JLabel("Email");
+        email.setBounds(30, 260, 300, 20);
+        email.setForeground(new Color(220, 220, 220));
+        email.setFont(new Font("Arial", Font.BOLD, 16));
+        add(email);
+
+        emaill = new JTextField();
+        emaill.setBounds(30, 285, 300, 25);
+        emaill.setFont(new Font("Arial", Font.PLAIN, 16));
+        emaill.setText("Enter Your Email");
+        emaill.setForeground(new Color(150, 150, 150));
+        emaill.setBackground(new Color(220, 220, 220));
+        emaill.setBorder(border);
+        emaill.addFocusListener(this);
+        add(emaill);
+
+
         JLabel cast = new JLabel("Surname");
-        cast.setBounds(30, 270, 300, 50);
+        cast.setBounds(30, 310, 300, 20);
         cast.setForeground(new Color(220, 220, 220));
         cast.setFont(new Font("Arial", Font.BOLD, 16));
         add(cast);
 
         castt = new JTextField();
-        castt.setBounds(30, 310, 300, 30);
+        castt.setBounds(30, 340, 300, 25);
         castt.setFont(new Font("Arial", Font.PLAIN, 16));
         castt.setText("Enter Your Surname");
         castt.setForeground(new Color(150, 150, 150));
@@ -164,13 +181,13 @@ public class Registration extends JPanel implements FocusListener, ActionListene
         add(castt);
 
         JLabel district = new JLabel("District");
-        district.setBounds(30, 330, 300, 50);
+        district.setBounds(30, 370, 300, 20);
         district.setForeground(new Color(220, 220, 220));
         district.setFont(new Font("Arial", Font.BOLD, 16));
         add(district);
 
         districtt = new JTextField();
-        districtt.setBounds(30, 370, 300, 30);
+        districtt.setBounds(30, 400, 300, 25);
         districtt.setFont(new Font("Arial", Font.PLAIN, 16));
         districtt.setText("Enter Your District");
         districtt.setForeground(new Color(150, 150, 150));
@@ -180,13 +197,13 @@ public class Registration extends JPanel implements FocusListener, ActionListene
         add(districtt);
 
         JLabel contact = new JLabel("Contact");
-        contact.setBounds(30, 390, 300, 50);
+        contact.setBounds(30, 430, 300, 20);
         contact.setForeground(new Color(220, 220, 220));
         contact.setFont(new Font("Arial", Font.BOLD, 16));
         add(contact);
 
         contactNo = new JTextField();
-        contactNo.setBounds(30, 430, 300, 30);
+        contactNo.setBounds(30, 460, 300, 25);
         contactNo.setFont(new Font("Arial", Font.PLAIN, 16));
         contactNo.setText("Format: 92xxxxxxxxxx");
         contactNo.setForeground(new Color(150, 150, 150));
@@ -219,7 +236,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
     public void focusGained(FocusEvent e) {
         if (e.getSource() == username || e.getSource() == fathername
                 || e.getSource() == cnic || e.getSource() == contactNo
-                || e.getSource() == districtt || e.getSource() == castt) {
+                || e.getSource() == districtt || e.getSource() == castt|| e.getSource()==emaill) {
             line = BorderFactory.createLineBorder(Color.BLACK, 2);
             empty = BorderFactory.createEmptyBorder(0, 5, 00, 10);
             border = new CompoundBorder(line, empty);
@@ -231,6 +248,15 @@ public class Registration extends JPanel implements FocusListener, ActionListene
                 username.setText("");
             }
         }
+
+        if (e.getSource() == emaill) {
+            emaill.setForeground(Color.BLACK);
+            emaill.setBorder(border);
+            if (emaill.getText().equals("Enter Your Email")) {
+                emaill.setText("");
+            }
+        }
+
         if (e.getSource() == fathername) {
             fathername.setForeground(Color.BLACK);
             fathername.setBorder(border);
@@ -328,6 +354,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
             name = name.trim();
             fatherName = fathername.getText();
             Cnic = cnic.getText();
+            eMail = emaill.getText();
             surname = castt.getText();
             District = districtt.getText();
             phone = contactNo.getText();
@@ -336,7 +363,42 @@ public class Registration extends JPanel implements FocusListener, ActionListene
             boolean isCnicCorrect = false;
             boolean isPhoneCorrect = false;
             boolean isProfileSelected = true;
+            boolean isNameCorrect = true;
+            boolean isFNameCorrect = true;
+            boolean isEmailCorrect = false;
+            boolean isSurnameCorrect = true;
+            boolean isDistrictCorrect = true;
             boolean isDateCorrect = false;
+            for(char i: name.toCharArray()){
+                if((int)i<65 || (int)i>122){
+                    isNameCorrect = false;
+                    break;
+                }
+            }
+            for(char i: District.toCharArray()){
+                if((int)i<65 || (int)i>122){
+                    isDistrictCorrect = false;
+                    break;
+                }
+            }
+            for(char i: fatherName.toCharArray()){
+                if((int)i<65 || (int)i>122){
+                    isFNameCorrect = false;
+                    break;
+                }
+            }
+            for(char i: surname.toCharArray()){
+                if((int)i<65 || (int)i>122){
+                    isSurnameCorrect = false;
+                    break;
+                }
+            }
+            if(eMail.contains("@")){
+                String subString = eMail.substring((eMail.indexOf('@')+1));
+                System.out.println(subString);
+                if(subString.contains(".com"))
+                    isEmailCorrect = true;
+            }
             DateFormat date = new SimpleDateFormat("yyyy-MM-dd");
             try{
                 date.parse(yyyy+"-"+mm+"-"+dd);
@@ -349,7 +411,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
                 isProfileSelected = false;
             }
 
-            if(Cnic.charAt(5) == '-' && Cnic.charAt(13) == '-') {
+            if(Cnic.charAt(5) == '-' && Cnic.charAt(13) == '-' && Cnic.length()<=15) {
                 isCnicCorrect = true;
             }
             if(phone.charAt(0) == '9' && phone.charAt(1) == '2' && phone.length()==12){
@@ -363,6 +425,18 @@ public class Registration extends JPanel implements FocusListener, ActionListene
             }
             else if (!isCnicCorrect){
                 JOptionPane.showMessageDialog(null, "Invalid CNIC","Warning",JOptionPane.WARNING_MESSAGE);
+            }
+            else if (!isEmailCorrect){
+                JOptionPane.showMessageDialog(null, "Invalid Email","Warning",JOptionPane.WARNING_MESSAGE);
+            }
+            else if(!isNameCorrect){
+                JOptionPane.showMessageDialog(null, "Invalid Name","Warning",JOptionPane.WARNING_MESSAGE);
+            }else if(!isFNameCorrect){
+                JOptionPane.showMessageDialog(null, "Invalid Father Name","Warning",JOptionPane.WARNING_MESSAGE);
+            }else if(!isSurnameCorrect){
+                JOptionPane.showMessageDialog(null, "Invalid Surname","Warning",JOptionPane.WARNING_MESSAGE);
+            }else if(!isDistrictCorrect){
+                JOptionPane.showMessageDialog(null, "Invalid District","Warning",JOptionPane.WARNING_MESSAGE);
             }
             else if (!isPhoneCorrect){
                 JOptionPane.showMessageDialog(null, "Invalid Phone Number","Warning",JOptionPane.WARNING_MESSAGE);
@@ -388,22 +462,18 @@ public class Registration extends JPanel implements FocusListener, ActionListene
                     pass+=Cnic.charAt(3);
                     pass+=Cnic.charAt(4);
                     pass = pass.toLowerCase(Locale.ROOT);
-                    if(user.length()>15){
-                        JOptionPane.showMessageDialog(null,"Invalid Nic");
-                    }
-                    else{
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project",
                             "root", "root586");
                     Statement st = con.createStatement();
-                    st.execute("insert into Candidates(Name,FatherName,Cnic,Surname,District,Contact,username,password,Image,DOB) values('" + name + "','" + fatherName + "','" + Cnic + "','" + surname + "','" + District + "','" + phone + "','" + user + "','" + pass + "','"+imgPath+"','"+DataBirth+"')");
+                    st.execute("insert into Candidates(Name,FatherName,Cnic,Surname,District,Contact,username,password,Image,DOB,Email) values('" + name + "','" + fatherName + "','" + Cnic + "','" + surname + "','" + District + "','" + phone + "','" + user + "','" + pass + "','"+imgPath+"','"+DataBirth+"','"+eMail+"')");
                     st.close();
 
                         Main_Frame.label.removeAll();
                         Main_Frame.label.validate();
                         Main_Frame.label.add(cpn.CPN_panel);
                         Main_Frame.label.repaint();
-                    }
+
                 } catch (Exception a) {
                     String exept= " Cnic Already registered";
                     JOptionPane.showMessageDialog(null, exept, "error", JOptionPane.ERROR_MESSAGE);
@@ -418,6 +488,7 @@ public class Registration extends JPanel implements FocusListener, ActionListene
             cnic.setText("");
             districtt.setText("");
             contactNo.setText("");
+            emaill.setText("");
         }
     }
 }
